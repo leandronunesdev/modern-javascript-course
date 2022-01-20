@@ -1,13 +1,22 @@
-let age = 5;
+let shoppingList = ['Cheddar Cheese', '2% Milk'];
 
-if (age < 6 || age >= 65) {
-  console.log('YOU GET IN FOR FREE');
-} else {
-  console.log('YOU MUST PAY!');
-}
+shoppingList[1] = 'Whole Milk';
+shoppingList[2] = 'Ice Cream';
 
-let color = 'violet';
+shoppingList[shoppingList.length] = 'Tomatoes';
+shoppingList[shoppingList.length] = 'Potatoes';
 
-if (color === 'purple' || color === 'lilac' || color === 'violet') {
-  console.log('GREAT CHOICE!');
-}
+let lotto = [45, 12, 23, 25, 34];
+
+let myColletion = [12, 'dog', true, null, NaN];
+
+let colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
+
+let topSongs = [
+  'First Time Ever I Saw Your Face',
+  'God Only Knows',
+  'A Day In The Life',
+  'Life On Mars',
+];
+
+topSongs.push('Fortunate Song');
