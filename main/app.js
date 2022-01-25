@@ -1,52 +1,43 @@
-const posts = [
-  {
-    title: 'cool video',
-    link: 'http://www.blah.com',
-    username: 'sillyGoose98',
-  },
-  {
-    title: 'cool video',
-    link: 'http://www.blah.com',
-    username: 'sillyGoose98',
-  },
-  {
-    title: 'cool video',
-    link: 'http://www.blah.com',
-    username: 'sillyGoose98',
-  },
-  {
-    title: 'cool video',
-    link: 'http://www.blah.com',
-    username: 'sillyGoose98',
-  },
+// let subreddits = ['soccer', 'popheads', 'cringe', 'books'];
+
+// for (let i = 0; i < subreddits.length; i++) {
+//   console.log(subreddits[i]);
+// }
+
+// for (let sub of subreddits) {
+//   console.log(sub);
+// }
+
+// for (let char of 'cockadoodledoo') {
+//   console.log(char.toLocaleUpperCase());
+// }
+
+const magicSquare = [
+  [2, 7, 6],
+  [9, 5, 1],
+  [4, 3, 8],
 ];
 
-// for (let i = 1; i <= 10; i++) {
-//   console.log('HELLO:', i);
+// for (let i = 0; i < magicSquare.length; i++) {
+//   let row = magicSquare[i];
+//   let sum = 0;
+//   for (let j = 0; j < row.length; j++) {
+//     sum += row[j];
+//   }
+//   console.log(`${row} summed to ${sum}`);
 // }
 
-// for (let i = 1; i <= 10; i += 3) {
-//   console.log('HELLO:', i);
+// for (let row of magicSquare) {
+//   let sum = 0;
+//   for (let num of row) {
+//     sum += num;
+//   }
+//   console.log(`${row} summed to ${sum}`);
 // }
 
-// for (let num = 1; num <= 20; num++) {
-//   console.log(`${num}x${num} =  ${num * num}`);
-// }
+const words1 = ['mail', 'milk', 'bath', 'black'];
+const words2 = ['box', 'shake', 'tub', 'berry'];
 
-// for (let i = 200; i >= 0; i -= 25) {
-//   console.log(i);
-// }
-// console.log('AFTER THE LOOP!');
-
-const examScores = [98, 77, 84, 91, 57, 66];
-
-for (let i = 0; i < examScores.length; i++) {
-  console.log(i, examScores[i]);
+for (let i = 0; i < words1.length; i++) {
+  console.log(`${words1[i]}${words2[i]}`);
 }
-
-const myStudents = [
-  {
-    firstName: 'Zeus',
-    grade: 86,
-  },
-];
