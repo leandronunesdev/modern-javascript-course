@@ -1,11 +1,14 @@
 h1 {
-  color: blue;
+  color: purple;
+  font-size: 60px;
 }
 
-#special {
-  color: red;
+#bear-photo {
+  width: 250px;
 }
 
-.highlight {
-  color: blueviolet;
+.special {
+  color: teal;
+  font-size: 30px;
+  border: 1px solid teal;
 }
