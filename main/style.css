@@ -1,14 +1,7 @@
-h1 {
-  color: purple;
-  font-size: 60px;
+.win {
+  background-color: rgba(0, 255, 0, 0.3);
 }
 
-#bear-photo {
-  width: 250px;
-}
-
-.special {
-  color: teal;
-  font-size: 30px;
-  border: 1px solid teal;
+.loss {
+  background-color: rgba(255, 0, 0, 0.3);
 }
