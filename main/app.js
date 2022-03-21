@@ -1,152 +1,38 @@
-const warriorsGames = [
-  {
-    awayTeam: {
-      team: 'Golden State',
-      points: 119,
-      isWinner: true,
-    },
-    homeTeam: {
-      team: 'Houston',
-      points: 106,
-      isWinner: false,
-    },
-  },
-  {
-    awayTeam: {
-      team: 'Golden State',
-      points: 105,
-      isWinner: false,
-    },
-    homeTeam: {
-      team: 'Houston',
-      points: 127,
-      isWinner: true,
-    },
-  },
-  {
-    homeTeam: {
-      team: 'Golden State',
-      points: 126,
-      isWinner: true,
-    },
-    awayTeam: {
-      team: 'Houston',
-      points: 85,
-      isWinner: false,
-    },
-  },
-  {
-    homeTeam: {
-      team: 'Golden State',
-      points: 92,
-      isWinner: false,
-    },
-    awayTeam: {
-      team: 'Houston',
-      points: 95,
-      isWinner: true,
-    },
-  },
-  {
-    awayTeam: {
-      team: 'Golden State',
-      points: 94,
-      isWinner: false,
-    },
-    homeTeam: {
-      team: 'Houston',
-      points: 98,
-      isWinner: true,
-    },
-  },
-  {
-    homeTeam: {
-      team: 'Golden State',
-      points: 115,
-      isWinner: true,
-    },
-    awayTeam: {
-      team: 'Houston',
-      points: 86,
-      isWinner: false,
-    },
-  },
-  {
-    awayTeam: {
-      team: 'Golden State',
-      points: 101,
-      isWinner: true,
-    },
-    homeTeam: {
-      team: 'Houston',
-      points: 92,
-      isWinner: false,
-    },
-  },
-];
+const form = document.querySelector('#signup-form');
 
-// const ulParent = document.createElement('ul');
+const creditCardInput = document.querySelector('#cc');
+const termsCheckbox = document.querySelector('#terms');
+const veggieSelect = document.querySelector('#veggie');
 
-// for (let game of warriorsGames) {
-//   const { homeTeam, awayTeam } = game;
-//   const gameLi = document.createElement('li');
-//   const { team: hTeam, points: hPoints } = homeTeam;
-//   const { team: aTeam, points: aPoints } = awayTeam;
-//   const teamNames = `${aTeam} @ ${hTeam}`;
-//   let scoreLine;
-//   if (aPoints > hPoints) {
-//     scoreLine = `<b>${aPoints}</b>-${hPoints}`;
-//   } else {
-//     scoreLine = `${aPoints}-<b>${hPoints}</b>`;
-//   }
-//   const warriors = hTeam === 'Golden State' ? homeTeam : awayTeam;
-//   gameLi.classList.add(warriors.isWinner ? 'win' : 'loss');
+// form.addEventListener('submit', function (e) {
+//   alert('submitted the form!');
+//   console.log('cc', creditCardInput.value);
+//   console.log('terms', termsCheckbox.value);
+//   console.log('veggies', veggieSelect.value);
 
-//   console.log(warriors);
-//   gameLi.innerHTML = `${teamNames} ${scoreLine}`;
-//   console.log(scoreLine);
-//   ulParent.appendChild(gameLi);
-// }
+//   e.preventDefault();
+// });
 
-// document.body.prepend(ulParent);
+const formData = {};
+for (let input of [creditCardInput, termsCheckbox, veggieSelect]) {
+  input.addEventListener('change', ({ target }) => {
+    const { name, type, value, checked } = target;
+    formData[name] = type === 'checkbox' ? checked : value;
+    console.log(formData);
+  });
+}
 
-//****** */
+// creditCardInput.addEventListener('input', (e) => {
+//   console.log('CC CHANGED!', e);
+//   formData['cc'] = e.target.value;
+// });
 
-const makeChart = (games, targetTeam) => {
-  const ulParent = document.createElement('ul');
+// veggieSelect.addEventListener('input', (e) => {
+//   console.log('VEGGIE CHANGED!', e);
+//   formData['veggie'] = e.target.value;
+// });
 
-  for (let game of games) {
-    const { homeTeam, awayTeam } = game;
-    const gameLi = document.createElement('li');
-    gameLi.innerHTML = getScoreLine(game);
-    gameLi.classList.add(isWinner(game, targetTeam) ? 'win' : 'loss');
-
-    ulParent.appendChild(gameLi);
-  }
-  return ulParent;
-};
-
-const isWinner = ({ homeTeam, awayTeam }, targetTeam) => {
-  const target = homeTeam.team === targetTeam ? homeTeam : awayTeam;
-  return target.isWinner;
-};
-
-const getScoreLine = ({ homeTeam, awayTeam }) => {
-  const { team: hTeam, points: hPoints } = homeTeam;
-  const { team: aTeam, points: aPoints } = awayTeam;
-  const teamNames = `${aTeam} @ ${hTeam}`;
-  let scoreLine;
-  if (aPoints > hPoints) {
-    scoreLine = `<b>${aPoints}</b>-${hPoints}`;
-  } else {
-    scoreLine = `${aPoints}-<b>${hPoints}</b>`;
-  }
-  return `${teamNames} ${scoreLine}`;
-};
-
-const gsSection = document.querySelector('#gs');
-const hrSection = document.querySelector('#hr');
-const gsChart = makeChart(warriorsGames, 'Golden State');
-const hrChart = makeChart(warriorsGames, 'Houston');
-gsSection.appendChild(gsChart);
-hrSection.appendChild(hrChart);
+// termsCheckbox.addEventListener('input', (e) => {
+//   console.log('CHECKBOX', e);
+//   formData['agreeToTerms'] = e.target.value;
+// });
